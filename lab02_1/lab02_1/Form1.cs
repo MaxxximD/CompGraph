@@ -46,27 +46,29 @@ namespace lab02_1
            
         }
 
-        //Построить
+        //Построить гистограмму интенсивности оттенков серого после преобразований
         private void button3_Click(object sender, EventArgs e)
         {
             string s_out;
             pictureBox5.Image = Histogram.DrawHistogram(image1, "GRAY", pictureBox3.Width, pictureBox3.Height, out s_out);
+            label4.Text = "max значение:" + s_out;
             pictureBox6.Image = Histogram.DrawHistogram(image2, "GRAY", pictureBox4.Width, pictureBox4.Height, out s_out);
+            label5.Text = "max значение:" + s_out;
         }
 
-        static private Bitmap GetShadesOfgray(Bitmap source, string channel)
+        static private Bitmap GetShadesOfgray(Bitmap source, string formula)
         {
             Bitmap result = new Bitmap(source.Width, source.Height);
-            switch (channel)
+            switch (formula)
             {
                 case "NTSC":
                     for (int i = 0; i < source.Width; i++)
                         for (int j = 0; j < source.Height; j++)
                         {
                             Color color = source.GetPixel(i, j);
-                            var newColor = 0.299 * color.R + 0.587 * color.G + 0.114 * color.B;
-                            var newColorI = (int)(newColor <= 255 ? newColor : 255);
-                            result.SetPixel(i, j, Color.FromArgb(color.A, newColorI, newColorI, newColorI));
+                            var res = 0.299 * color.R + 0.587 * color.G + 0.114 * color.B; // Преобразование цветного изображения в оттенки серого
+                            var new_color = (int)(res <= 255 ? res : 255); // чтобы не выйти за границы диапазона
+                            result.SetPixel(i, j, Color.FromArgb(color.A, new_color, new_color, new_color));
                         }
                     break;
                 case "sRGB":
@@ -74,9 +76,9 @@ namespace lab02_1
                         for (int j = 0; j < source.Height; j++)
                         {
                             Color color = source.GetPixel(i, j);
-                            var newColor = 0.2126 * color.R + 0.7152 * color.G + 0.0722 * color.B;
-                            var newColorI = (int)(newColor <= 255 ? newColor : 255);
-                            result.SetPixel(i, j, Color.FromArgb(color.A, newColorI, newColorI, newColorI));
+                            var res = 0.2126 * color.R + 0.7152 * color.G + 0.0722 * color.B; // Преобразование цветного изображения в оттенки серого
+                            var new_color = (int)(res <= 255 ? res : 255);
+                            result.SetPixel(i, j, Color.FromArgb(color.A, new_color, new_color, new_color));
                         }
                     break;
                 default:
@@ -86,39 +88,47 @@ namespace lab02_1
         }
 
 
-        static private Bitmap GetDiff(Bitmap source1, Bitmap source2)
+        // получить разницу
+        static private Bitmap GetDiff(Bitmap img1, Bitmap img2)
         {
             //Инициализация
-            Bitmap diff = new Bitmap(source1.Width, source1.Height);
-            List<List<(int, int, int, int)>> t = new List<List<(int, int, int, int)>>(source1.Width);
-            for (int i = 0; i < source1.Width; i++)
+            Bitmap diff = new Bitmap(img1.Width, img1.Height);
+            List<List<(int, int, int, int)>> lst = new List<List<(int, int, int, int)>>(img1.Width);
+            for (int i = 0; i < img1.Width; i++)
             {
-                t.Add(new List<(int, int, int, int)>(source1.Height));
-                for (int j = 0; j < source1.Height; j++)
-                    t[i].Add((0, 0, 0, 0));
+                lst.Add(new List<(int, int, int, int)>(img1.Height));
+                for (int j = 0; j < img1.Height; j++)
+                    lst[i].Add((0, 0, 0, 0));
             }
+            
 
             //Вычисление разницы
-            for (int i = 0; i < source1.Width; i++)
-                for (int j = 0; j < source1.Height; j++)
+            for (int i = 0; i < img1.Width; i++)
+                for (int j = 0; j < img1.Height; j++)
                 {
-                    Color color1 = source1.GetPixel(i, j);
-                    Color color2 = source2.GetPixel(i, j);
-                    t[i][j] = (color1.A - color2.A, color1.R - color2.R, color1.G - color2.G, color1.B - color2.B);
+                    Color color1 = img1.GetPixel(i, j);
+                    Color color2 = img2.GetPixel(i, j);
+                    lst[i][j] = (color1.A - color2.A, color1.R - color2.R, color1.G - color2.G, color1.B - color2.B);
                 }
+
+
             //Подсчёт минимума
-            var min = (t.Min(a => a.Min(i => i.Item1)), t.Min(a => a.Min(i => i.Item2)), t.Min(a => a.Min(i => i.Item2)), t.Min(a => a.Min(i => i.Item2)));
-            var max = (t.Max(a => a.Max(i => i.Item1)), t.Max(a => a.Max(i => i.Item2)), t.Max(a => a.Max(i => i.Item2)), t.Max(a => a.Max(i => i.Item2)));
+            var min = (lst.Min(a => a.Min(i => i.Item1)), lst.Min(a => a.Min(i => i.Item2)), lst.Min(a => a.Min(i => i.Item2)), lst.Min(a => a.Min(i => i.Item2)));
+            var max = (lst.Max(a => a.Max(i => i.Item1)), lst.Max(a => a.Max(i => i.Item2)), lst.Max(a => a.Max(i => i.Item2)), lst.Max(a => a.Max(i => i.Item2)));
             var dif = (max.Item1 - min.Item1, max.Item2 - min.Item2, max.Item3 - min.Item3, max.Item4 - min.Item4);
+
+
             //Нормализация на основе минимума
-            for (int i = 0; i < source1.Width; i++)
-                for (int j = 0; j < source1.Height; j++)
-                {
-                    diff.SetPixel(i, j, Color.FromArgb((t[i][j].Item2 - min.Item2) * (255 / dif.Item2), (t[i][j].Item3 - min.Item3) * (255 / dif.Item3), (t[i][j].Item4 - min.Item4) * (255 / dif.Item4)));
-                }
+              for (int i = 0; i < img1.Width; i++)
+                 for (int j = 0; j < img1.Height; j++)
+                 {
+                     diff.SetPixel(i, j, Color.FromArgb((lst[i][j].Item2 - min.Item2) * (255 / dif.Item2), (lst[i][j].Item3 - min.Item3) * (255 / dif.Item3), (lst[i][j].Item4 - min.Item4) * (255 / dif.Item4)));
+                 }
             return diff;
+            
         }
 
-       
+
+
     }
 }
