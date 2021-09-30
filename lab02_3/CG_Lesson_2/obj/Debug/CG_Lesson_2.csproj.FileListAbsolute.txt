@@ -1,0 +1,10 @@
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\bin\Debug\CG_Lesson_2.exe.config
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\bin\Debug\CG_Lesson_2.exe
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\bin\Debug\CG_Lesson_2.pdb
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\obj\Debug\CG_Lesson_2.csproj.AssemblyReference.cache
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\obj\Debug\CG_Lesson_2.Form1.resources
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\obj\Debug\CG_Lesson_2.Properties.Resources.resources
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\obj\Debug\CG_Lesson_2.csproj.GenerateResource.cache
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\obj\Debug\CG_Lesson_2.csproj.CoreCompileInputs.cache
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\obj\Debug\CG_Lesson_2.exe
+C:\Users\fniko\source\repos\CG_Lesson_2\CG_Lesson_2\obj\Debug\CG_Lesson_2.pdb
