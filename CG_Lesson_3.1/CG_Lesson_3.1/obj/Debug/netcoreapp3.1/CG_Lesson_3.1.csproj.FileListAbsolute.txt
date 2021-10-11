@@ -1,0 +1,17 @@
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\bin\Debug\netcoreapp3.1\CG_Lesson_3.1.exe
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\bin\Debug\netcoreapp3.1\CG_Lesson_3.1.deps.json
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\bin\Debug\netcoreapp3.1\CG_Lesson_3.1.runtimeconfig.json
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\bin\Debug\netcoreapp3.1\CG_Lesson_3.1.runtimeconfig.dev.json
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\bin\Debug\netcoreapp3.1\CG_Lesson_3.1.dll
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\bin\Debug\netcoreapp3.1\CG_Lesson_3.1.pdb
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.csproj.AssemblyReference.cache
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3._1.Form1.resources
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.csproj.GenerateResource.cache
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.AssemblyInfoInputs.cache
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.AssemblyInfo.cs
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.csproj.CoreCompileInputs.cache
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.dll
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.pdb
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3.1.genruntimeconfig.cache
+C:\Users\fniko\source\repos\CG_Lesson_3.1\CG_Lesson_3.1\obj\Debug\netcoreapp3.1\CG_Lesson_3._1.Properties.Resources.resources
