@@ -89,11 +89,6 @@ namespace CG_Lesson_5
                 MakePicture();
                 label_step.Text = "do mountain picture";
             }
-            else if (step == 1)
-            {
-                MakePicture();
-                label_step.Text = "do mountain picture";
-            }
             else if (step == 2)
             {
                 MakeMountainPicture();
