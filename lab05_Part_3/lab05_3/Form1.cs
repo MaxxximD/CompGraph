@@ -41,6 +41,29 @@ namespace lab05_3
         }
 
 
+        int Fact(int n)
+        {
+            int x = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                x *= i;
+            }
+            return x;
+        }
+
+
+        /// <summary>
+        /// вычисляет полинома Бернштейна
+        /// </summary>
+        /// <param name="k"></param>
+        /// <param name="n"></param>
+        /// <param name="t">определяет, где именно на расстоянии от P0 до P1 находится B(t)</param>
+        /// <returns></returns>
+        float Pol(int k, int n, float t)
+        {
+            return (Fact(n) / (Fact(k) * Fact(n - k))) * (float)Math.Pow(t, k) * (float)Math.Pow(1 - t, n - k); // Полином Бернштейна
+        }
+
         public void Bezier()
         {
             if (!flag)
@@ -65,15 +88,11 @@ namespace lab05_3
             }
 
             g.DrawLines(new Pen(Color.Black), bezierPoints);
-            pictureBox1.Invalidate();
+            
         }
 
 
-        // вычисление полинома Бернштейна
-        float Pol(int i, int n, float t)
-        {
-            return (Fact(n) / (Fact(i) * Fact(n - i))) * (float)Math.Pow(t, i) * (float)Math.Pow(1 - t, n - i); // Полином Бернштейна
-        }
+        
 
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -96,6 +115,7 @@ namespace lab05_3
                         arrPoints.RemoveAt(i);
                         Bezier();
                     }
+                    pictureBox1.Invalidate();
                 }
                 
             }
@@ -117,20 +137,12 @@ namespace lab05_3
         }
 
 
-        int Fact(int n)
-        {
-            int x = 1;
-            for (int i = 1; i <= n; i++)
-            {
-                x *= i;
-            }
-            return x;
-        }
 
         // Выполнить
         private void button1_Click(object sender, EventArgs e)
         {
             Bezier();
+            pictureBox1.Invalidate();
         }
 
         
