@@ -38,3 +38,13 @@ C:\Users\MaDMaX\Documents\Visual Studio 2019\CompGraph_2021\Lab4\obj\Debug\Lab4.
 C:\Users\MaDMaX\Documents\Visual Studio 2019\CompGraph_2021\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
 C:\Users\MaDMaX\Documents\Visual Studio 2019\CompGraph_2021\Lab4\obj\Debug\Lab4.exe
 C:\Users\MaDMaX\Documents\Visual Studio 2019\CompGraph_2021\Lab4\obj\Debug\Lab4.pdb
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\bin\Debug\Lab4.exe.config
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\bin\Debug\Lab4.exe
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\bin\Debug\Lab4.pdb
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\obj\Debug\Lab4.csprojAssemblyReference.cache
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\obj\Debug\Lab4.Form1.resources
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\obj\Debug\Lab4.Properties.Resources.resources
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\obj\Debug\Lab4.csproj.GenerateResource.cache
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\obj\Debug\Lab4.exe
+C:\Users\MaDMaX\CompGraph\Lab4_Part_1\obj\Debug\Lab4.pdb

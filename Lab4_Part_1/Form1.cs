@@ -110,6 +110,8 @@ namespace Lab4
             foreach (var x in pointList)
             {
                 bmp.SetPixel((int)x.x, (int)x.y, Color.Black);
+                SolidBrush solid = new SolidBrush(Color.Red);
+                g.FillEllipse(solid, (int)x.x, (int)x.y, 5, 5);
             }
             foreach (var x in lineList)
             {
@@ -368,8 +370,7 @@ namespace Lab4
             {
                 if (p1.x == p3.x)
                 {
-                    if (!((Math.Max(p1.y, p2.y) < Math.Min(p3.y, p4.y)) ||
-                            (Math.Min(p1.y, p2.y) > Math.Max(p3.y, p4.y))))
+                    if (!((Math.Max(p1.y, p2.y) < Math.Min(p3.y, p4.y)) || (Math.Min(p1.y, p2.y) > Math.Max(p3.y, p4.y))))
                     {
                         MessageBox.Show("Отрезки накладываются друг на друга -> пересекаются", "Info", MessageBoxButtons.OK);
                         return;
@@ -378,6 +379,19 @@ namespace Lab4
                 MessageBox.Show("оба отрезка вертикальные -> не пересекаются", "Info", MessageBoxButtons.OK);
                 return;
             }
+
+            //оба отрезка невертикальные
+            double a_1 = (p1.y - p2.y) / (p1.x - p2.x);
+            double a_2 = (p3.y - p4.y) / (p3.x - p4.x);
+            double b_1 = p1.y - a_1 * p1.x;
+            double b_2 = p3.y - a_2 * p3.x;
+
+            if (a_1 == a_2)
+            {
+                MessageBox.Show("Отрезки параллельны -> не пересекаются", "Info", MessageBoxButtons.OK);
+                return;
+            }
+
 
             //если первый отрезок вертикальный
             if (p1.x - p2.x == 0)
@@ -421,17 +435,7 @@ namespace Lab4
                 return;
             }
 
-            //оба отрезка невертикальные
-            double a_1 = (p1.y - p2.y) / (p1.x - p2.x);
-            double a_2 = (p3.y - p4.y) / (p3.x - p4.x);
-            double b_1 = p1.y - a_1 * p1.x;
-            double b_2 = p3.y - a_2 * p3.x;
-
-            if (a_1 == a_2)
-            {
-                MessageBox.Show("Отрезки параллельны -> не пересекаются", "Info", MessageBoxButtons.OK);
-                return;
-            }
+            
 
             //x_a - абсцисса точки пересечения двух прямых
             double x_a = (b_2 - b_1) / (a_1 - a_2);
@@ -577,6 +581,7 @@ namespace Lab4
                     return;
                 }
                 number_of_polygon = comboBox_polygon.SelectedIndex;
+               
             }
 
 
@@ -761,13 +766,14 @@ namespace Lab4
             Right, Left, Unknown 
         }
 
-        private void button_make_MouseClick(object sender, MouseEventArgs e)
+   
+
+        //Классифицировать
+        private void button5_Click(object sender, EventArgs e)
         {
             if (checkBox_сlassify.Checked)
             {
-                var edge = lineList.First();
-                Position p = Point_Pos(edge, e.Location);
-
+                Position p = Point_Pos(lineList.First(), pointList.Last());
 
                 switch (p)
                 {
@@ -788,12 +794,13 @@ namespace Lab4
         }
 
         // Определяет положение точки относительно направленного ребра
-        private Position Point_Pos(Line edge, PointF b)
+        private Position Point_Pos(Line edge, P b)
         {
-            P O = edge.p1;
+            P O = edge.p1; // нач тока ребра
             P a = edge.p2;
 
-            double sign = (b.X - O.x) * (a.y - O.y) - (b.Y - O.y) * (a.x - O.x);
+            //(х3 - х1) * (у2 - у1) - (у3 - у1) * (х2 - х1)
+            double sign = (b.x - O.x) * (a.y - O.y) - (b.y - O.y) * (a.x - O.x);
 
             if ((int)sign < 0)
                 return Position.Right;

@@ -83,6 +83,7 @@
             this.label_line_2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox_сlassify = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,7 +170,6 @@
             this.button_make.Text = "make";
             this.button_make.UseVisualStyleBackColor = true;
             this.button_make.Click += new System.EventHandler(this.button_make_Click);
-            this.button_make.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button_make_MouseClick);
             // 
             // label_dx
             // 
@@ -524,7 +524,7 @@
             // 
             // button_line_intersection
             // 
-            this.button_line_intersection.Location = new System.Drawing.Point(896, 87);
+            this.button_line_intersection.Location = new System.Drawing.Point(896, 144);
             this.button_line_intersection.Name = "button_line_intersection";
             this.button_line_intersection.Size = new System.Drawing.Size(92, 23);
             this.button_line_intersection.TabIndex = 53;
@@ -535,7 +535,7 @@
             // comboBox_line_intersection1
             // 
             this.comboBox_line_intersection1.FormattingEnabled = true;
-            this.comboBox_line_intersection1.Location = new System.Drawing.Point(873, 138);
+            this.comboBox_line_intersection1.Location = new System.Drawing.Point(873, 195);
             this.comboBox_line_intersection1.Name = "comboBox_line_intersection1";
             this.comboBox_line_intersection1.Size = new System.Drawing.Size(63, 21);
             this.comboBox_line_intersection1.TabIndex = 54;
@@ -543,7 +543,7 @@
             // comboBox_line_intersection2
             // 
             this.comboBox_line_intersection2.FormattingEnabled = true;
-            this.comboBox_line_intersection2.Location = new System.Drawing.Point(948, 138);
+            this.comboBox_line_intersection2.Location = new System.Drawing.Point(948, 195);
             this.comboBox_line_intersection2.Name = "comboBox_line_intersection2";
             this.comboBox_line_intersection2.Size = new System.Drawing.Size(63, 21);
             this.comboBox_line_intersection2.TabIndex = 55;
@@ -551,7 +551,7 @@
             // label_line_1
             // 
             this.label_line_1.AutoSize = true;
-            this.label_line_1.Location = new System.Drawing.Point(893, 120);
+            this.label_line_1.Location = new System.Drawing.Point(893, 177);
             this.label_line_1.Name = "label_line_1";
             this.label_line_1.Size = new System.Drawing.Size(32, 13);
             this.label_line_1.TabIndex = 56;
@@ -560,7 +560,7 @@
             // label_line_2
             // 
             this.label_line_2.AutoSize = true;
-            this.label_line_2.Location = new System.Drawing.Point(956, 120);
+            this.label_line_2.Location = new System.Drawing.Point(956, 177);
             this.label_line_2.Name = "label_line_2";
             this.label_line_2.Size = new System.Drawing.Size(32, 13);
             this.label_line_2.TabIndex = 57;
@@ -568,7 +568,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(896, 197);
+            this.button4.Location = new System.Drawing.Point(896, 50);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(92, 23);
             this.button4.TabIndex = 58;
@@ -586,11 +586,22 @@
             this.checkBox_сlassify.Text = "classify the position of a point";
             this.checkBox_сlassify.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(879, 288);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(88, 30);
+            this.button5.TabIndex = 60;
+            this.button5.Text = "classify";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 607);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBox_сlassify);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label_line_2);
@@ -712,6 +723,7 @@
         private System.Windows.Forms.Label label_line_2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox_сlassify;
+        private System.Windows.Forms.Button button5;
     }
 }
 
