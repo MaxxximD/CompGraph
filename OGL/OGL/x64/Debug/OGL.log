@@ -1,0 +1,4 @@
+﻿  Pentagon.cpp
+C:\Users\Ahmed\source\repos\OGL\OGL\Pentagon.cpp(9,45): warning C4305: 'initializing': truncation from 'double' to 'float'
+  LINK : C:\Users\Ahmed\source\repos\OGL\x64\Debug\OGL.exe not found or not built by the last incremental link; performing full link
+  OGL.vcxproj -> C:\Users\Ahmed\source\repos\OGL\x64\Debug\OGL.exe
